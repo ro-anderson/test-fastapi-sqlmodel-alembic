@@ -7,6 +7,7 @@ This project demonstrates the integration of FastAPI, SQLModel, and Alembic to c
 - **FastAPI**: A modern, fast web framework for building APIs with Python
 - **SQLModel**: A library for interacting with SQL databases from Python code, with Python objects
 - **Alembic**: A database migration tool for SQLAlchemy (which SQLModel is built on)
+- **uv**: A fast Python package manager and resolver written in Rust
 
 ## Project Structure
 
@@ -40,9 +41,19 @@ The project implements a music database with the following models:
 
 1. Clone the repository
 2. Install dependencies:
+   
+   Using pip:
    ```bash
    pip install -e .
    ```
+   
+   Using uv (recommended):
+   ```bash
+   uv venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   uv sync
+   ```
+
 3. Initialize the database:
    ```bash
    make alembic-upgrade
@@ -50,9 +61,16 @@ The project implements a music database with the following models:
 
 ## Running the Application
 
+Using uvicorn directly:
 ```bash
 # Start the FastAPI server
 uvicorn main:app --reload
+```
+
+Using uv:
+```bash
+# Start the FastAPI server with uv
+uv run uvicorn main:app --reload
 ```
 
 ## Testing the API
