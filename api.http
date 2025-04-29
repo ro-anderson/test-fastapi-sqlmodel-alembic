@@ -1,0 +1,22 @@
+POST http://localhost:8000/bands/
+Content-Type: application/json
+
+{
+    "name": "Test Band 2",
+    "genre": "rock",
+    "albums": [
+        {
+            "title": "new Test Album",
+            "release_date": "2024-01-01"
+        },
+        {
+            "title": "new Test Album 2",
+            "release_date": "2024-01-02"
+        }
+    ]
+}
+
+###
+
+GET http://localhost:8000/bands/2
+
